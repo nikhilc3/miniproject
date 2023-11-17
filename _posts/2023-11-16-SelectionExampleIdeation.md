@@ -3,7 +3,6 @@ layout: default
 title: Selection Example
 permalink: /selectionplanning
 ---
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -15,38 +14,69 @@ permalink: /selectionplanning
       margin-top: 50px;
     }
     .athlete-option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       position: relative;
       cursor: pointer;
       transition: transform 0.3s ease-in-out;
     }
     .athlete-option:hover {
-      transform: scale(1.1);
+      transform: scale(1.2);
     }
     .athlete-option img {
       width: 150px;
-      height: 150px;
+      height: 225px;
       border-radius: 50%;
     }
-    .selected-athlete {
+    .athlete-option span {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    /* Specific image for Bubble Athlete */
+    .athlete-option.bubble:hover img {
       content: url("https://github.com/Code-Demons/miniproject/assets/40652645/213c0a9e-9c56-4484-9d69-3d1cc5984a5a");
     }
-    .athlete-option:hover .selected-athlete {
-      content: url("https://github.com/Code-Demons/miniproject/assets/40652645/6c68be6f-ae9d-44d6-8fb0-706604508827");
+    /* Specific image for Merge Athlete */
+    .athlete-option.merge:hover img {
+      content: url("https://github.com/Code-Demons/miniproject/assets/40652645/adb81563-7fda-47ac-981a-620550ef59e9");
+    }
+    #attribute-section {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f0f0f0;
+      padding: 20px;
+      display: none;
     }
   </style>
 </head>
 <body>
 
   <div class="athlete-selector">
-    <div class="athlete-option">
+    <div class="athlete-option bubble" onmouseover="showAttributes('Billy Bubble Attributes')" onmouseout="hideAttributes()">
       <img src="https://github.com/Code-Demons/miniproject/assets/40652645/4049e8b1-4b24-4c6f-a080-24504607145d" alt="Bubble Athlete">
-      <div class="selected-athlete"></div>
+      <span>Billy Bubble</span>
     </div>
-    <div class="athlete-option">
-      <img src="https://github.com/Code-Demons/miniproject/assets/40652645/a4a76b53-cf84-4a7f-9093-bfa7dc6385c9" alt="Merge Athlete">
-      <div class="selected-athlete"></div>
+    <div class="athlete-option merge" onmouseover="showAttributes('Martin Merge Attributes')" onmouseout="hideAttributes()">
+      <img src="https://github.com/Code-Demons/miniproject/assets/40652645/245c81fd-0ccd-4a52-acee-af09a34baaad" alt="Merge Athlete">
+      <span>Martin Merge</span>
     </div>
   </div>
+  
+  <div id="attribute-section"></div>
+
+  <script>
+    function showAttributes(attributes) {
+      document.getElementById("attribute-section").innerHTML = attributes;
+      document.getElementById("attribute-section").style.display = "block";
+    }
+
+    function hideAttributes() {
+      document.getElementById("attribute-section").style.display = "none";
+    }
+  </script>
 
 </body>
 </html>
