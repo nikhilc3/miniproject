@@ -1,9 +1,9 @@
-title: Ethan Tran
-description: "August 2023 to June 2024"
-owner_name: Ethan Tran
-github_username: realethantran
-github_repo: "ethanPages"
-baseurl: "/ethanPages"
+title: Code Demons Mini Project
+description: "November 2023"
+owner_name: Anthony Bazhenov
+github_username: Ant11234
+github_repo: "miniproject"
+baseurl: "/miniproject"
 remote_theme: jekyll/minima
 
 # remote_theme: pages-themes/dinky@v0.2.0
